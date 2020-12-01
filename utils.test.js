@@ -23,4 +23,13 @@ describe('tests function copyAndPush', () => {
 
         expect(returnedArray).toEqual([1, 2, 3, 4]);
     });
+
+    it('makes sure original array is unchanged', () => {
+        const numbers = [1, 2, 3];
+        returnedArray = copyAndPush(numbers, 4);
+
+        expect(numbers).toEqual([1, 2, 3]);
+
+
+    })
 })
