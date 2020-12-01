@@ -8,16 +8,16 @@ function copyAndPush(array, value) {
 
 function capitalizeAndFilter(array) {
 
-    let returnArray = [];
-    for (let string of array) {
-        let upperCaseString = string.toUpperCase();
-        if (upperCaseString[0] != 'F') {
-            returnArray.push(upperCaseString);
-        }
-    }
-
-
+    const returnArray = array.reduce(reducer, []);
     return returnArray;
 };
+
+const reducer = (accumulator, currentValue) => {
+    if (currentValue[0].toUpperCase() != 'F') {
+        accumulator.push(currentValue.toUpperCase());
+        return accumulator;
+    }
+    return accumulator;
+}
 
 module.exports = { getName, copyAndPush, capitalizeAndFilter };
