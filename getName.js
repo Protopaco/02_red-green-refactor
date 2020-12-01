@@ -1,8 +1,5 @@
-function getName(obj) {
-
-    const { name } = obj;
+function getName({ name }) {
     return name;
-
 };
 
 module.exports = getName;
