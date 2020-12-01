@@ -52,14 +52,14 @@ describe('tests function capitalizeAndFilter', () => {
 
 
 describe('tests function getQuotes', () => {
-    it('returns single Futurama quote', () => {
+    it('returns single Futurama quote', async () => {
         const quote = {
-            "character": "Professor Farnsworth",
-            "quote": "I'm sure Bender has just made some cunning remark, but he doesn't know I taped\nover his soap operas to record this message.",
-            "image": "https://res.cloudinary.com/dzxqhkyqd/image/upload/v1554904014/farnsworth.png"
+            "name": expect.any(String),
+            "text": expect.any(String),
+            "image": expect.any(String),
         };
 
-        const returnedQuote = getQuotes();
+        const returnedQuote = await getQuotes();
 
         expect(returnedQuote).toEqual(quote);
     })
