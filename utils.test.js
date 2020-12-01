@@ -1,6 +1,6 @@
-const getName = require('./getName.js');
+const { getName, copyAndPush } = require('./utils.js');
 
-describe('returns name value from recieved object', () => {
+describe('tests function getName', () => {
     it('returns the name spot', () => {
         const spot = { name: 'spot', age: 5, weight: '20 lbs' };
         const name = getName(spot);
@@ -16,3 +16,11 @@ describe('returns name value from recieved object', () => {
     })
 });
 
+describe('tests function copyAndPush', () => {
+    it('returns array [1,2,3,4]', () => {
+        const numbers = [1, 2, 3];
+        returnedArray = copyAndPush(numbers, 4) // return [1, 2, 3, 4];
+
+        expect(returnedArray).toEqual([1, 2, 3, 4]);
+    });
+})
