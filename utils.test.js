@@ -1,4 +1,4 @@
-const { getName, copyAndPush } = require('./utils.js');
+const { getName, copyAndPush, capitalizeAndFilter } = require('./utils.js');
 
 describe('tests function getName', () => {
     it('returns the name spot', () => {
@@ -19,17 +19,25 @@ describe('tests function getName', () => {
 describe('tests function copyAndPush', () => {
     it('returns array [1,2,3,4]', () => {
         const numbers = [1, 2, 3];
-        returnedArray = copyAndPush(numbers, 4) // return [1, 2, 3, 4];
+        let returnedArray = copyAndPush(numbers, 4) // return [1, 2, 3, 4];
 
         expect(returnedArray).toEqual([1, 2, 3, 4]);
     });
 
     it('makes sure original array is unchanged', () => {
         const numbers = [1, 2, 3];
-        returnedArray = copyAndPush(numbers, 4);
+        let returnedArray = copyAndPush(numbers, 4);
 
         expect(numbers).toEqual([1, 2, 3]);
 
 
     })
+})
+
+describe('tests function capitalizeAndFilter', () => {
+    it("returns array ['SPOT', 'ROVER', 'BINGO']", () => {
+        const strings = ['spot', 'rover', 'bingo', 'fred'];
+        let returnedArray = capitalizeAndFilter(strings);
+    })
+
 })

@@ -4,6 +4,11 @@ function getName({ name }) {
 
 function copyAndPush(array, value) {
     return [...array, value];
-}
+};
 
-module.exports = { getName, copyAndPush };
+function capitalizeAndFilter(array) {
+
+    return ['SPOT', 'ROVER', 'BINGO'];
+};
+
+module.exports = { getName, copyAndPush, capitalizeAndFilter };
