@@ -1,4 +1,4 @@
-const { getName, copyAndPush, capitalizeAndFilter } = require('./utils.js');
+const { getName, copyAndPush, capitalizeAndFilter, getQuotes } = require('./utils.js');
 
 describe('tests function getName', () => {
     it('returns the name spot', () => {
@@ -47,5 +47,20 @@ describe('tests function capitalizeAndFilter', () => {
         let returnedArray = capitalizeAndFilter(strings);
 
         expect(returnedArray).toEqual(['TOAD', 'PETER', 'GEORGE']);
+    })
+})
+
+
+describe('tests function getQuotes', () => {
+    it('returns single Futurama quote', () => {
+        const quote = {
+            "character": "Professor Farnsworth",
+            "quote": "I'm sure Bender has just made some cunning remark, but he doesn't know I taped\nover his soap operas to record this message.",
+            "image": "https://res.cloudinary.com/dzxqhkyqd/image/upload/v1554904014/farnsworth.png"
+        };
+
+        const returnedQuote = getQuotes();
+
+        expect(returnedQuote).toEqual(quote);
     })
 })
