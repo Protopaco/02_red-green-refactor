@@ -1,4 +1,6 @@
-const { getName, copyAndPush, capitalizeAndFilter, getQuotes } = require('./utils.js');
+const { getName, copyAndPush, capitalizeAndFilter, fetchQuotes } = require('./utils.js');
+const fetch = require('superagent')
+jest.mock('superagent')
 
 describe('tests function getName', () => {
     it('returns the name spot', () => {
@@ -51,15 +53,38 @@ describe('tests function capitalizeAndFilter', () => {
 })
 
 
-describe('tests function getQuotes', () => {
-    it('returns single Futurama quote', async () => {
+// describe('tests function fetchQuotes', () => {
+//     it('returns single Futurama quote', async () => {
+//         const quote = {
+//             "name": expect.any(String),
+//             "text": expect.any(String),
+//             "image": expect.any(String),
+//         };
+
+//         const returnedQuote = await fetchQuotes();
+
+//         expect(returnedQuote).toEqual(quote);
+//     })
+// })
+
+describe('tests fetchQuotes with jest.mock', () => {
+    it('fetches the first five rick and morty characters', async () => {
+
         const quote = {
             "name": expect.any(String),
             "text": expect.any(String),
             "image": expect.any(String),
         };
 
-        const returnedQuote = await getQuotes();
+        fetch.get.mockResolvedValue({
+            body: [{
+                character: 'any name',
+                quote: 'any quote',
+                image: 'any image url'
+            }]
+        });
+
+        const returnedQuote = await fetchQuotes();
 
         expect(returnedQuote).toEqual(quote);
     })

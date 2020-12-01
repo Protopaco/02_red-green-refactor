@@ -22,12 +22,12 @@ const reducer = (accumulator, currentValue) => {
     return accumulator;
 }
 
-const getQuotes = async () => {
-    const returnedObject = await fetch('http://futuramaapi.herokuapp.com/api/quotes/1');
+const fetchQuotes = async () => {
+    const returnedObject = await fetch.get('http://futuramaapi.herokuapp.com/api/quotes/1');
 
     const { body: [{ character: name, quote: text, image }] } = returnedObject;
     return { name, text, image };
 
 }
 
-module.exports = { getName, copyAndPush, capitalizeAndFilter, getQuotes };
+module.exports = { getName, copyAndPush, capitalizeAndFilter, fetchQuotes };
