@@ -8,7 +8,15 @@ function copyAndPush(array, value) {
 
 function capitalizeAndFilter(array) {
 
-    return ['SPOT', 'ROVER', 'BINGO'];
+    let returnArray = [];
+    for (let string of array) {
+        let upperCaseString = string.toUpperCase();
+        if (upperCaseString[0] != 'F') {
+            returnArray.push(upperCaseString);
+        }
+    }
+
+    return returnArray;
 };
 
 module.exports = { getName, copyAndPush, capitalizeAndFilter };
