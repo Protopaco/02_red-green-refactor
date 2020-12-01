@@ -3,7 +3,8 @@ function getName({ name }) {
 };
 
 function copyAndPush(array, value) {
-    return [1, 2, 3, 4]
+    array.push(value);
+    return array;
 }
 
 module.exports = { getName, copyAndPush };
