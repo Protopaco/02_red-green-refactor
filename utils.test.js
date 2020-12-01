@@ -38,6 +38,8 @@ describe('tests function capitalizeAndFilter', () => {
     it("returns array ['SPOT', 'ROVER', 'BINGO']", () => {
         const strings = ['spot', 'rover', 'bingo', 'fred'];
         let returnedArray = capitalizeAndFilter(strings);
+
+        expect(returnedArray).toEqual(['SPOT', 'ROVER', 'BINGO']);
     })
 
 })

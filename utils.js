@@ -16,6 +16,7 @@ function capitalizeAndFilter(array) {
         }
     }
 
+
     return returnArray;
 };
 
